@@ -1,21 +1,24 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = []
-        clos_opn = {")": "(", "}": "{", "]": "["}
-        for elem in s:
-            if elem in clos_opn:
-                if stack and stack[-1] == clos_opn[elem]:
-                    stack.pop()
-                else:
-                    return False
+        if s == "":
+            return True
 
+        stack = []
+        brackets = {")": "(", "}": "{", "]": "["}
+
+        for elem in s:
+            if elem in brackets:
+                if stack and stack[-1] != brackets[elem]:
+                    return False
+                stack.pop()
             else:
                 stack.append(elem)
-        return True if stack == [] else False
+        return stack == []
 
 
 settings = Solution()
 
 s = "[][][][]"
 
+assert settings.isValid("())")
 assert settings.isValid(s)
