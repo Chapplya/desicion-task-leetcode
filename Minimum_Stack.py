@@ -10,12 +10,11 @@ class MinStack:
         else:
             if self.list_min[-1] > val:
                 self.list_min.append(val)
-            else:
-                self.list_min.append(self.list_min[-1])
 
     def pop(self) -> None:
-        self.stack.pop()
-        self.list_min.pop()
+        del_el = self.stack.pop()
+        if del_el == self.list_min[-1]:
+            self.list_min.pop()
 
     def top(self) -> int:
         return self.stack[-1]
