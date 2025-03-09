@@ -8,7 +8,7 @@ class MinStack:
         if not self.list_min:
             self.list_min.append(val)
         else:
-            if self.list_min[-1] > val:
+            if self.list_min[-1] >= val:
                 self.list_min.append(val)
 
     def pop(self) -> None:
