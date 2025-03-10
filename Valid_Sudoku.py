@@ -45,3 +45,5 @@ board = [
 ]
 
 assert settings.isValidSudoku(board)
+
+
