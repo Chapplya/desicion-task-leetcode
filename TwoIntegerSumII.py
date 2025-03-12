@@ -2,7 +2,7 @@ class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
 
         left = 0
-        right = len(numbers)-1
+        right = len(numbers) - 1
         while left < right:
             summ = numbers[left] + numbers[right]
             if summ > target:
@@ -16,7 +16,7 @@ class Solution:
 
 settings = Solution()
 
-numbers = [6,8,1,2]
+numbers = [6, 8, 1, 2]
 target = 3
 
-print(settings.twoSum(numbers,target))
+print(settings.twoSum(numbers, target))
