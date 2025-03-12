@@ -19,7 +19,6 @@ class Solution:
         lst = [(pos, spd) for pos, spd in zip(position, speed)]
         stack = []
         lst.sort(reverse=True)
-        print(lst)
         for pos, spd in lst:
             stack.append((target - pos)/ spd)
             if len(stack) >= 2 and stack[-1] <= stack[-2]:
