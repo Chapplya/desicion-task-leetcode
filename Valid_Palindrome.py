@@ -22,7 +22,6 @@ class Solution:
         )
 
 
-
 settings = Solution()
 s = "A man, a plan, a canal: Panama"
 
