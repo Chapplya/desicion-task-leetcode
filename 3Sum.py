@@ -10,21 +10,22 @@ class Solution:
             if i > 0 and sor_nums[i] == sor_nums[i - 1]:
                 continue
 
-            l = i + 1
-            r = len(sor_nums) - 1
-            while l < r:
-                summ = sor_nums[i] + sor_nums[l] + sor_nums[r]
+            left = i + 1
+            right = len(sor_nums) - 1
+            while left < right:
+                summ = sor_nums[i] + sor_nums[left] + sor_nums[right]
 
                 if summ < 0:
-                    l += 1
+                    left += 1
                 elif summ > 0:
-                    r -= 1
+                    right -= 1
                 else:
-                    backet.append([sor_nums[i], sor_nums[l], sor_nums[r]])
-                    l += 1
-                    r -= 1
-                    while sor_nums[l] == sor_nums[l - 1] and l < r:
-                        l += 1
+                    backet.append([sor_nums[i], sor_nums[left], sor_nums[right]])
+                    left += 1
+                    right -= 1
+                    while left < right and sor_nums[left] == sor_nums[left - 1]:
+                        left += 1
+
         return backet
 
 
