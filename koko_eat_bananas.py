@@ -3,17 +3,21 @@ import math
 
 class Solution:
     def minEatingSpeed(self, piles: list[int], h: int) -> int:
-        if len(piles) == h:
-            return max(piles)
-        speed = 1
-        while True:
-            avgtime = 0
-            for elem in piles:
-                avgtime = math.ceil(elem / speed)
-            if avgtime <= h:
-                return speed
+        l, r = 1, max(piles)
+        res = r
+
+        while l <= r:
+            k = (l + r) // 2
+
+            totalTime = 0
+            for p in piles:
+                totalTime += math.ceil(float(p) / k)
+            if totalTime <= h:
+                res = k
+                r = k - 1
             else:
-                speed += 1
+                l = k + 1
+        return res
 
 
 sett = Solution()
