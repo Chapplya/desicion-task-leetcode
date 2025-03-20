@@ -8,6 +8,7 @@ class Solution:
                 res = min(res, nums[lf])
                 break
 
+
             mid = (lf + rt) // 2
             res = min(res, nums[mid])
             if nums[mid] >= nums[lf]:
