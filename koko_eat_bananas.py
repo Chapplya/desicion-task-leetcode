@@ -11,7 +11,7 @@ class Solution:
 
             totalTime = 0
             for elem in piles:
-                totalTime += math.ceil(float(elem) / k)
+                totalTime += math.ceil(float(elem) / kr)
             if totalTime <= h:
                 res = kr
                 rr = kr - 1
