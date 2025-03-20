@@ -1,25 +1,18 @@
 class Solution:
     def findMin(self, nums: list[int]) -> int:
-        res = nums[0]
-        lf, rt = 0, len(nums) - 1
-
-        while lf <= rt:
-            if nums[lf] < nums[rt]:
-                res = min(res, nums[lf])
-                break
-
-
-            mid = (lf + rt) // 2
-            res = min(res, nums[mid])
-            if nums[mid] >= nums[lf]:
-                lf = mid + 1
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = left + (right - left) // 2 #  привычка из плюсов, чтобы переполнения типов не было 
+            if nums[mid] < nums[right]:
+                right = mid
             else:
-                rt = mid - 1
-        return res
+                left = mid + 1
+                
+        return nums[left]
 
 
 settings = Solution()
 
-nums = [3, 4, 5, 6, 1, 2]
+nums = [3, 4, 5, 6, 1]
 
 print(settings.findMin(nums))
