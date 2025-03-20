@@ -3,20 +3,20 @@ import math
 
 class Solution:
     def minEatingSpeed(self, piles: list[int], h: int) -> int:
-        l, r = 1, max(piles)
-        res = r
+        lf, rr = 1, max(piles)
+        res = rr
 
-        while l <= r:
-            k = (l + r) // 2
+        while lf <= rr:
+            kr = (lf + rr) // 2
 
             totalTime = 0
-            for p in piles:
-                totalTime += math.ceil(float(p) / k)
+            for elem in piles:
+                totalTime += math.ceil(float(elem) / k)
             if totalTime <= h:
-                res = k
-                r = k - 1
+                res = kr
+                rr = kr - 1
             else:
-                l = k + 1
+                lf = kr + 1
         return res
 
 
