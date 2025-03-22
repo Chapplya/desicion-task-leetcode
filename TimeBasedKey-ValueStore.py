@@ -21,6 +21,7 @@ class TimeMap:
         if idx >= 0 :
             closest_time = time.iloc[idx]
             return time[closest_time]
+        return ""
         
 timeMap = TimeMap()
 
