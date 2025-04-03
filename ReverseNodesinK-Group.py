@@ -5,7 +5,7 @@ class ListNode:
         self.next = next
 
 class Solution:
-    def reverseKGroup(self, head, k: int) -> :
+    def reverseKGroup(self, head, k: int):
         result = ListNode(0, head)
         temp = result
 
